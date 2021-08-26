@@ -1,0 +1,60 @@
+.edit .btn {
+  background: #03c;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.275);
+  color: #fff;
+  font-size: 1.5em;
+  height: 50px;
+  outline: none;
+  position: absolute;
+  width: 50px;
+  z-index: 1;
+}
+
+.edit .btn:hover {
+  background: #324da1;
+}
+
+.cpadl {
+  padding-left: 50px;
+}
+
+ol,
+ul {
+  padding-left: 0;
+}
+
+.mainBlock li {
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+
+.service ul li {
+  padding-left: 0;
+}
+
+.service ul {
+  list-style: none;
+  margin: 0.75em 0;
+  padding: 0 1em;
+}
+
+.service li::before {
+  border-color: transparent #008ece;
+  border-style: solid;
+  border-width: 0.35em 0 0.35em 0.45em;
+  content: '';
+  display: block;
+  height: 0;
+  left: -1em;
+  position: relative;
+  top: 0.9em;
+  width: 0;
+}
+
+.preview-card {
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}

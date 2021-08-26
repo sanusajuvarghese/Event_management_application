@@ -1,0 +1,104 @@
+.article-card {
+  height: 426px;
+  width: 292px;
+}
+
+.article-title {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  padding: 8px;
+  word-break: break-all;
+
+  /* padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 15px;
+  word-break: break-all; */
+}
+
+.article-img {
+  height: 360px;
+
+  /* min-height: 250px; */
+
+  width: 292px;
+}
+
+.text-center {
+  padding: 100px;
+}
+
+.fa {
+  font-size: 10px;
+}
+
+.card-header .fa {
+  transition: 0.3s transform ease-in-out;
+}
+
+.card-header .collapsed .fa {
+  transform: rotate(180deg);
+}
+
+.blog-card {
+  border-radius: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.card-container {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.card-block {
+  background: #fff;
+  height: 100%;
+  padding: 10px 0 10px 0;
+
+  /* height: 120px; */
+}
+
+.card-title {
+  color: #03c;
+  font-size: 14px;
+  height: 17px;
+  margin: 0 10px 10px 10px;
+  overflow: hidden;
+}
+
+.card-date {
+  border-top: 1px solid #edebeb;
+  font-size: 13px;
+  height: 25px;
+  margin: 0;
+  overflow: hidden;
+  padding: 5px 10px 0 10px;
+}
+
+/* // Medium devices (tablets, 768px and up) */
+
+/* @media (min-width: 768px) {
+  .article-card {
+    height: 485px;
+    width: 25%;
+  }
+} */
+
+/* // Large devices (desktops, 992px and up) */
+
+/* @media (min-width: 992px) {
+  .article-card {
+    height: 400px;
+    width: 28%;
+  }
+} */
+
+/* // Extra large devices (large desktops, 1200px and up) */
+
+/* @media (min-width: 1200px) {
+  .article-card {
+    height: 450px;
+    width: 280px;
+  }
+} */

@@ -1,0 +1,39 @@
+<app-loader *ngIf="show"></app-loader>
+<div class="container">
+  <div>
+    <ul class="breadcrumb pl-0">
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/config-management/categoryGroup">Category Groups</a></li>
+      <li>
+        <a class="active"> Create Category Group </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 py-4">
+      <div class="text-center" style="margin-bottom: 51px;">
+        <p class="heading-secondary">Create Category Group</p>
+      </div>
+
+      <form [formGroup]="addCatForm">
+        <div class="form-row">
+          <label class="col-sm-3 col-form-label"> Name <span class="error">*</span> </label>
+          <mat-form-field class="example-full-width col-sm-9">
+            <input matInput placeholder="Name" formControlName="name" maxlength="30" />
+            <mat-error *ngIf="checkError('name', 'required')">(Name is required)</mat-error>
+            <mat-error *ngIf="checkError('name', 'maxlength')">(Name should be upto 20 characters)</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-sm-12 text-right">
+          <button type="submit" (click)="createCategoryGroup()" class="btn button-1 action-good">
+            Submit Details
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- [disabled]='!createEventForm.valid' -->

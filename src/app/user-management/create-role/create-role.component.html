@@ -1,0 +1,59 @@
+<div class="container">
+  <div>
+    <ul class="breadcrumb">
+      <li><a href="/home">Home</a></li>
+      <li><a (click)="BackMe()">Roles</a></li>
+      <li>
+        <a class="active">{{ title }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 py-4">
+      <div class="text-center">
+        <p class="heading-secondary">{{ title }}</p>
+      </div>
+      <form [formGroup]="createUserForm">
+        <mat-form-field class="example-full-width col-sm-12">
+          <input matInput placeholder="Name" formControlName="name" />
+          <mat-error *ngIf="checkError('name', 'required')">(Name is required)</mat-error>
+          <mat-error *ngIf="checkError('name', 'maxlength')">(Name should be upto 20 characters)</mat-error>
+        </mat-form-field>
+
+        <div class="form-row">
+          <mat-accordion *ngFor="let group of privilegeGroups" class="example-full-width col-sm-12 pb-2">
+            <mat-expansion-panel [expanded]="defaultExpanded(group)">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <span
+                    ><b style="font-weight: 500;"> {{ group }} </b></span
+                  >
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="row">
+                <div *ngFor="let priv of privilegeData; let i = index">
+                  <div *ngIf="priv.displayGroupName == group" class="col d-inline-flex">
+                    <mat-checkbox [checked]="defaultChecked(priv.id)" [value]="priv.id" (change)="onCheckChange($event)" class="mr-2">{{
+                      priv.displayName
+                    }}</mat-checkbox>
+                    <!-- <p>{{i+1}}. <span>{{res.displayName}}</span></p>  <mat-slide-toggle>Select</mat-slide-toggle> -->
+                  </div>
+                </div>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <div class="mt-2" style="color: red; font-size: 12px;" *ngIf="formArray.length === 0 && submitted">
+            (Privilege is required)
+          </div>
+        </div>
+
+        <div class="col-sm-12 text-right mt-2">
+          <button class="btn button-1 action-good" (click)="createRole()">{{ buttonText }}</button>
+          <!-- <button type="submit" class="btn button-1 action-good" [disabled]="!createSpeakerForm.valid">Submit Details</button> -->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-light header-shadow fix-top" style="padding: 4px 16px;">
+  <a class="navbar-brand p-0" routerLink="/home">
+    <img src="assets/app-icon.png" class="d-inline-block align-top header-logo-img" alt="" />
+  </a>
+  <ul class="ml-auto" style="list-style: none;">
+    <li class="dropdown user user-menu" style="width: 160px; text-align: right;">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <span class="hidden-xs">{{ userName === null ? 'User Name' : userName }}</span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a (click)="logOut()">Sign Out</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>

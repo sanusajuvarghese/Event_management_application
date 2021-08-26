@@ -1,0 +1,112 @@
+<app-loader *ngIf="show"></app-loader>
+<div class="container">
+  <div>
+    <ul class="breadcrumb pl-0">
+      <li><a href="/home">Home</a></li>
+      <li><a class="active">Users</a></li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <section class="section-tours">
+    <div class="row">
+      <div class="col mt-2">
+        <a routerLink="create"><button type="button" class="btn button-1 action-good">Create Employee User</button></a>
+      </div>
+      <div class="col text-right">
+        <mat-form-field class="w-50">
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Search...." />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="seq">
+          <th mat-header-cell *matHeaderCellDef width="10%" mat-sort-header><b>S.No.</b></th>
+          <td mat-cell *matCellDef="let row">{{ row.seq }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header width="10%"><b>Name</b></th>
+          <td mat-cell *matCellDef="let row">{{ row.Name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header width="20%"><b>Email</b></th>
+          <td mat-cell *matCellDef="let row">{{ row.Email }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="roles">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header width="36%"><b>Role</b></th>
+          <td mat-cell *matCellDef="let row">
+            <ng-container *ngFor="let role of row.roles; index as i; last as isLast">
+              <span *ngIf="i < 3">
+                <span *ngIf="isLast || i == 2; else defaultPriv">
+                  {{ role.displayName }}
+                  <span *ngIf="i == 2">
+                    <a
+                      data-toggle="modal"
+                      (click)="getRoleModal(row.roles, row.Name)"
+                      data-target="#exampleModal"
+                      style="color: #03c; cursor: default;"
+                      *ngIf="row.roles?.length > 0"
+                    >
+                      <br />See More
+                    </a>
+                  </span>
+                </span>
+                <ng-template #defaultPriv> {{ role.displayName }}, </ng-template>
+              </span>
+            </ng-container>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Status">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header width="10%"><b>Status</b></th>
+          <td mat-cell *matCellDef="let row">
+            <button [ngClass]="{ 'status-active': row.Status === 'Active', 'status-disable': row.Status === 'Not Active' }">
+              {{ row.Status }}
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actionsColumn">
+          <th mat-header-cell *matHeaderCellDef><b>Action</b></th>
+          <td mat-cell *matCellDef="let row">
+            <a><button class="btn assignee-button" [routerLink]="['details', row.id]">Assign Roles</button></a>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      <mat-paginator [pageSize]="25" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+  </section>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          User Roles (<span>{{ roleName }}</span
+          >)
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <span *ngFor="let getroles of roleModal"
+          ><li>{{ getroles.displayName }}</li></span
+        >
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn button-1 action-good" data-dismiss="modal"><b>Close</b></button>
+      </div>
+    </div>
+  </div>
+</div>

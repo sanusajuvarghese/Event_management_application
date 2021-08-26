@@ -1,0 +1,312 @@
+<!-- Sidebar -->
+<div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+  <ul class="list-group" style="overflow-y: scroll; height: 90vh;">
+    <a
+      href="#submenu3"
+      data-toggle="collapse"
+      aria-expanded="false"
+      class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+      [ngClass]="{ active: dashboardChild1.isActive || dashboardChild2.isActive }"
+    >
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="menu-collapsed">Dashboard</span>
+        <span class="submenu-icon ml-auto"></span>
+      </div>
+    </a>
+    <div id="submenu3" class="collapse sidebar-submenu">
+      <a
+        routerLink="/home"
+        routerLinkActive="active"
+        #dashboardChild1="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">Home</span>
+      </a>
+      <a
+        routerLink="/home-config"
+        routerLinkActive="active"
+        #dashboardChild2="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">Homepage Configuration</span>
+      </a>
+    </div>
+    <a
+      href="#submenu1"
+      data-toggle="collapse"
+      aria-expanded="false"
+      class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+      [ngClass]="{ active: eventsChild1.isActive || eventsChild2.isActive || eventsChild3.isActive }"
+    >
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="menu-collapsed">Events</span>
+        <span class="submenu-icon ml-auto"></span>
+      </div>
+    </a>
+    <div id="submenu1" class="collapse sidebar-submenu">
+      <a
+        routerLink="/events"
+        routerLinkActive="active"
+        #eventsChild1="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">Event</span>
+      </a>
+      <a
+        routerLink="/participants"
+        routerLinkActive="active"
+        #eventsChild2="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">Participants</span>
+      </a>
+      <a
+        routerLink="/speakers"
+        routerLinkActive="active"
+        #eventsChild3="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">Speakers</span>
+      </a>
+    </div>
+    <a
+      href="#submenu2"
+      data-toggle="collapse"
+      aria-expanded="false"
+      class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+      [ngClass]="{
+        active:
+          resourceChild1.isActive ||
+          resourceChild2.isActive ||
+          resourceChild3.isActive ||
+          resourceChild4.isActive ||
+          resourceChild5.isActive ||
+          resourceChild6.isActive ||
+          resourceChild7.isActive
+      }"
+    >
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="menu-collapsed">Resources</span>
+        <span class="submenu-icon ml-auto"></span>
+      </div>
+    </a>
+    <div id="submenu2" class="collapse sidebar-submenu">
+      <a
+        routerLink="/resources/articles"
+        routerLinkActive="active"
+        #resourceChild1="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">Articles</span>
+      </a>
+      <a
+        routerLink="/resources/blogs"
+        routerLinkActive="active"
+        #resourceChild2="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">Blogs</span>
+      </a>
+      <a
+        routerLink="/resources/cases"
+        routerLinkActive="active"
+        #resourceChild3="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">Case Studies</span>
+      </a>
+      <a
+        routerLink="/resources/whitepapers"
+        routerLinkActive="active"
+        #resourceChild4="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">Whitepapers</span>
+      </a>
+      <a
+        routerLink="/resources/testimonials"
+        routerLinkActive="active"
+        #resourceChild5="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">Testimonials</span>
+      </a>
+      <a
+        routerLink="/resources/news"
+        routerLinkActive="active"
+        #resourceChild6="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">News</span>
+      </a>
+      <a
+        routerLink="/resources/videos"
+        routerLinkActive="active"
+        #resourceChild7="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">Videos</span>
+      </a>
+    </div>
+    <a
+      href="#submenu5"
+      data-toggle="collapse"
+      aria-expanded="false"
+      class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+      [ngClass]="{ active: configChild1.isActive || configChild2.isActive }"
+    >
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="menu-collapsed">Config Management</span>
+        <span class="submenu-icon ml-auto"></span>
+      </div>
+    </a>
+    <div id="submenu5" class="collapse sidebar-submenu">
+      <a
+        routerLink="config-management/categories"
+        routerLinkActive="active"
+        #configChild1="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">Categories</span>
+      </a>
+      <a
+        routerLink="config-management/categoryGroup"
+        routerLinkActive="active"
+        #configChild2="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">Category Groups</span>
+      </a>
+    </div>
+    <a routerLink="/cloud-service" routerLinkActive="active" class="bg-dark list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="menu-collapsed">Product & Services</span>
+      </div>
+    </a>
+    <a
+      href="#submenu4"
+      data-toggle="collapse"
+      aria-expanded="false"
+      class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+      [ngClass]="{ active: leadChild1.isActive || leadChild2.isActive || leadChild3.isActive }"
+      *ngIf="flag"
+    >
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="menu-collapsed">Reports</span>
+        <span class="submenu-icon ml-auto"></span>
+      </div>
+    </a>
+    <div id="submenu4" class="collapse sidebar-submenu">
+      <a
+        routerLink="/event-data"
+        routerLinkActive="active"
+        #leadChild1="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">events</span>
+      </a>
+      <a
+        routerLink="/resource-data"
+        routerLinkActive="active"
+        #leadChild2="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">resources</span>
+      </a>
+      <a
+        routerLink="/user-data"
+        routerLinkActive="active"
+        #leadChild3="routerLinkActive"
+        class="list-group-item list-group-item-action bg-dark text-white"
+      >
+        <span class="menu-collapsed">users</span>
+      </a>
+    </div>
+    <div *ngIf="flag">
+      <a
+        href="#submenu6"
+        data-toggle="collapse"
+        aria-expanded="false"
+        class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+        [ngClass]="{ active: usrChild1.isActive || usrChild2.isActive }"
+      >
+        <div class="d-flex w-100 justify-content-start align-items-center">
+          <span class="menu-collapsed">User Management</span>
+          <span class="submenu-icon ml-auto"></span>
+        </div>
+      </a>
+      <div id="submenu6" class="collapse sidebar-submenu">
+        <a
+          routerLink="user-management/user"
+          routerLinkActive="active"
+          class="list-group-item list-group-item-action bg-dark text-white"
+          #usrChild1="routerLinkActive"
+        >
+          <span class="menu-collapsed">Users</span>
+        </a>
+        <a
+          routerLink="user-management/roles"
+          routerLinkActive="active"
+          class="list-group-item list-group-item-action bg-dark text-white"
+          #usrChild2="routerLinkActive"
+        >
+          <span class="menu-collapsed">Roles</span>
+        </a>
+      </div>
+    </div>
+
+    <div *ngIf="flag">
+      <a
+        href="#submenu9"
+        data-toggle="collapse"
+        aria-expanded="false"
+        class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+        [ngClass]="{ active: notiChild1.isActive || notiChild2.isActive }"
+      >
+        <div class="d-flex w-100 justify-content-start align-items-center">
+          <span class="menu-collapsed">Notifications</span>
+          <span class="submenu-icon ml-auto"></span>
+        </div>
+      </a>
+      <div id="submenu9" class="collapse sidebar-submenu">
+        <a
+          routerLink="notification-management/notification"
+          routerLinkActive="active"
+          class="list-group-item list-group-item-action bg-dark text-white"
+          #notiChild1="routerLinkActive"
+        >
+          <span class="menu-collapsed">Notifications</span>
+        </a>
+        <a
+          routerLink="notification-management/campaign"
+          routerLinkActive="active"
+          class="list-group-item list-group-item-action bg-dark text-white"
+          #notiChild2="routerLinkActive"
+        >
+          <span class="menu-collapsed">Campaign</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- <a routerLink="notifications/campaign" routerLinkActive="active" class="bg-dark list-group-item list-group-item-action" *ngIf="flag">
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="menu-collapsed">Campaign</span>
+      </div>
+    </a>
+    <a routerLink="notifications" routerLinkActive="active" class="bg-dark list-group-item list-group-item-action" *ngIf="flag">
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="menu-collapsed">Notifications</span>
+      </div>
+    </a> -->
+    <a routerLink="jobs" routerLinkActive="active" class="bg-dark list-group-item list-group-item-action" *ngIf="flag">
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="menu-collapsed">Jobs</span>
+      </div>
+    </a>
+    <a class="bg-dark list-group-item list-group-item-action" *ngIf="flag">
+      <div class="d-flex w-100 justify-content-start align-items-center">
+        <span class="menu-collapsed">Settings</span>
+      </div>
+    </a>
+  </ul>
+</div>

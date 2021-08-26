@@ -1,0 +1,109 @@
+.event-card-body p {
+  font-size: 13px;
+  margin: 0;
+  padding: 0.1rem 0.8rem;
+}
+
+.event-card-body-footer {
+  padding: 10px 20px;
+}
+
+/* .card-body .card-title {
+  font-size: 18px;
+  height: 45px;
+  margin-bottom: 0.2rem;
+  overflow: hidden;
+}
+
+.card-body .card-text {
+  font-size: 14px;
+  height: 45px;
+  margin-bottom: 0.2rem;
+  overflow: hidden;
+} */
+
+/* .card-body {
+  padding: 0.8rem 0.8rem 0.3rem 0.8rem;
+}
+
+.card {
+  height: 100%;
+  margin-right: 10px;
+} */
+
+.search-icon:hover {
+  width: 300px;
+}
+
+.modal-remove {
+  background: #fff;
+  border: 2px solid #e3e3e3;
+  border-radius: 50%;
+  font-size: 30px;
+  height: 50px;
+  opacity: 1;
+  width: 50px;
+  z-index: 999;
+}
+
+.close:hover {
+  box-shadow: 0 0 10px 0 rgba(153, 153, 153, 0.7);
+  opacity: 1 !important;
+}
+
+.modal-dialog {
+  width: 800px !important;
+}
+
+.btn-outline-info {
+  border-color: #17a2b8;
+  color: #17a2b8;
+  width: 90px;
+}
+
+.fa {
+  font-size: 10px;
+}
+
+.card-header .fa {
+  transition: 0.3s transform ease-in-out;
+}
+
+.card-header .collapsed .fa {
+  transform: rotate(180deg);
+}
+
+.blog-card {
+  border-radius: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.card-container {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.card-block {
+  background: #fff;
+  height: 100%;
+  padding: 10px 0 10px 0;
+
+  /* height: 120px; */
+}
+
+.card-title {
+  color: #03c;
+  font-size: 15px;
+  height: 17px;
+  margin: 0 10px 10px 10px;
+  overflow: hidden;
+}
+
+.card-description {
+  font-size: 14px;
+  height: 45px;
+  overflow: hidden;
+  padding: 0 10px 5px 10px;
+  word-break: break-all;
+}

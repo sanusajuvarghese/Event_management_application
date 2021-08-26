@@ -1,0 +1,61 @@
+<app-loader *ngIf="show"></app-loader>
+<div class="container">
+  <div>
+    <ul class="breadcrumb pl-0">
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/config-management/categories">Categories</a></li>
+      <li>
+        <a class="active"> Create Category </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 py-4">
+      <div class="text-center" style="margin-bottom: 51px;">
+        <p class="heading-secondary">Create Category</p>
+      </div>
+
+      <form [formGroup]="addCatForm">
+        <div class="form-row">
+          <label class="col-sm-3 col-form-label">Name<span class="error">*</span> </label>
+          <mat-form-field class="example-full-width col-sm-9">
+            <input matInput placeholder="Name" formControlName="displayName" />
+            <mat-error *ngIf="checkError('displayName', 'required')">( Name is required)</mat-error>
+            <mat-error *ngIf="checkError('displayName', 'pattern')">( Name should only contain characters and spaces)</mat-error>
+            <mat-error *ngIf="checkError('displayName', 'maxlength')">( Name should be upto 20 characters)</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <label class="col-sm-3 col-form-label">Description </label>
+          <mat-form-field class="example-full-width col-sm-9">
+            <textarea matInput placeholder="Description" formControlName="description" rows="4" maxlength="50"></textarea>
+            <mat-error *ngIf="checkError('description', 'maxlength')">( Description should be upto 40 characters)</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <label class="col-sm-3 col-form-label">Select Category Group <span class="error">*</span></label>
+          <mat-form-field class="example-full-width col-sm-9">
+            <mat-label>Select Category Group</mat-label>
+            <mat-select formControlName="categoryGroupId">
+              <mat-option *ngFor="let category of allData" [value]="category.id">
+                {{ category.displayName | titlecase | removehyphens }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="checkError('categoryGroupId', 'required')">(Category Group is required)</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-sm-12 text-right">
+          <button type="submit" (click)="createCategory()" class="btn button-1 action-good">
+            Submit Details
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- [disabled]='!createEventForm.valid' -->
